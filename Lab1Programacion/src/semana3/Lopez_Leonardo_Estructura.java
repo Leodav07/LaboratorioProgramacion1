@@ -4,7 +4,7 @@
  */
 package semana3;
 import java.util.Scanner;
-
+import java.util.Random;
 /**
  *
  * @author hnleo
@@ -13,21 +13,24 @@ public class Lopez_Leonardo_Estructura {
     public static void main(String[] args){
         Scanner leer = new Scanner(System.in);
         int opSeleccion = 0, contadorPalabra= 0, contadorMax=0;
-        int contadorPalabraReves=0;
+        int contadorPalabraReves=0, contadorNumeroPerfecto=0, contadorPrimo=0;
         char letraReves = ' ';
         String palabraMax = "", palabraReves="", palabraRevesMax="";
+        boolean primo=true;
 
         do{
             System.out.println("=======**  MENU PRINCIPAL  **=======\n");
             System.out.println("1. Palabra Alreves");
-            System.out.println("1. Numero Perfecto");
-            System.out.println("1. Primos");
-            System.out.println("1. Votaciones");
-            System.out.println("1. Salir");
+            System.out.println("2. Numero Perfecto");
+            System.out.println("3. Primos");
+            System.out.println("4. Votaciones");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             opSeleccion = leer.nextInt();
             
             switch(opSeleccion){
+                
+                // Palabra Alréves
             case 1: 
             System.out.println("\n======================================");
                 contadorPalabraReves++;
@@ -65,6 +68,49 @@ public class Lopez_Leonardo_Estructura {
                   System.out.println("\n======================================\n");
                   
                   break;
+            
+            // Numero Perfecto
+            case 2: 
+                contadorNumeroPerfecto++;
+                System.out.print("\nIngrese un numero:  ");
+                int N = leer.nextInt();
+                int sumadeN=0;
+                
+                for(int i = 1; i<N; i++){
+                    if(N % i == 0){
+                        sumadeN+=i;
+                    }
+                }
+                if(sumadeN==N){
+                      System.out.println("Es un número perfecto."); 
+                }
+                else{
+                    System.out.println("No es un número perfecto.");
+                }
+            
+            // Numeros Primos
+            case 3: 
+                contadorPrimo++;
+                int divisores =0;
+                Random aleatorio = new Random();
+                int aleatorioN = aleatorio.nextInt(1,100);
+                
+                System.out.println("\nEl numero elegido es: "+aleatorioN);
+                System.out.print("Divisores: ");
+                
+                for(int i = 1; i<=aleatorioN; i++ ){
+                    if(aleatorioN % i == 0){
+                        System.out.print(i+" ");
+                        divisores++;
+                    }
+                }
+              if(divisores == 2){
+                  System.out.println("\nEs Primo");
+              }else{
+                  System.out.println("\nNo es primo");
+              }
+                
+                break;
         }
             
         }
