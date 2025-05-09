@@ -3,22 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package semana3;
+
 import java.util.Scanner;
 import java.util.Random;
+
 /**
  *
  * @author hnleo
  */
 public class Lopez_Leonardo_Estructura {
-    public static void main(String[] args){
-        Scanner leer = new Scanner(System.in);
-        int opSeleccion = 0, contadorPalabra= 0, contadorMax=0;
-        int contadorPalabraReves=0, contadorNumeroPerfecto=0, contadorPrimo=0;
-        char letraReves = ' ';
-        String palabraMax = "", palabraReves="", palabraRevesMax="";
-        boolean primo=true;
 
-        do{
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        leer.useDelimiter("\n");
+        int opSeleccion = 0, contadorPalabra = 0, contadorMax = 0;
+        int contadorPalabraReves = 0, contadorNumeroPerfecto = 0, contadorPrimo = 0, contadorVOTANTES = 0;
+        char letraReves = ' ';
+        String palabraMax = "", palabraReves = "", palabraRevesMax = "";
+        boolean primo = true;
+
+        do {
             System.out.println("=======**  MENU PRINCIPAL  **=======\n");
             System.out.println("1. Palabra Alreves");
             System.out.println("2. Numero Perfecto");
@@ -27,94 +31,154 @@ public class Lopez_Leonardo_Estructura {
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             opSeleccion = leer.nextInt();
-            
-            switch(opSeleccion){
-                
+
+            switch (opSeleccion) {
+
                 // Palabra Alréves
-            case 1: 
-            System.out.println("\n======================================");
-                contadorPalabraReves++;
-                System.out.print("\nIngrese una cantidad deseada de palabras: ");
-                int cantidadPalabras = leer.nextInt();
-                
-                for(int i = 1; i<=cantidadPalabras; i++ ){
-                    palabraReves="";
-                    System.out.println("\n");
-                    System.out.print("Palabra #"+i+": ");
-                    String palabra = leer.next().toLowerCase();
-                    System.out.print("Al réves: ");
+                case 1:
+                    System.out.println("\n======================================");
+                    contadorPalabraReves++;
+                    System.out.print("\nIngrese una cantidad deseada de palabras: ");
+                    int cantidadPalabras = leer.nextInt();
+
+                    for (int i = 1; i <= cantidadPalabras; i++) {
+                        palabraReves = "";
+                        System.out.println("\n");
+                        System.out.print("Palabra #" + i + ": ");
+                        String palabra = leer.next().toLowerCase();
+                        System.out.print("Al réves: ");
+
+                        for (int j = palabra.length() - 1; j >= 0; j--) {
+                            letraReves = palabra.charAt(j);
+                            System.out.print(letraReves);
+                            palabraReves += palabra.charAt(j);
+                        }
+
+                        contadorPalabra = letraReves;
+                        if (contadorPalabra > contadorMax) {
+                            contadorMax = contadorPalabra;
+                            palabraMax = palabra;
+                            palabraRevesMax = palabraReves;
+                        }
+
+                        if (palabra.equals(palabraReves)) {
+                            System.out.println("\nEs palíndromo");
+
+                        }
+
+                    }
+                    System.out.println("\nLa palabra más larga es: " + palabraMax);
+                    System.out.println("\n======================================\n");
+
+                    break;
+
+                // Numero Perfecto
+                case 2:
+                    contadorNumeroPerfecto++;
+                    System.out.print("\nIngrese un numero:  ");
+                    int N = leer.nextInt();
+                    int sumadeN = 0;
+
+                    for (int i = 1; i < N; i++) {
+                        if (N % i == 0) {
+                            sumadeN += i;
+                        }
+                    }
+                    if (sumadeN == N) {
+                        System.out.println("Es un número perfecto.");
+                    } else {
+                        System.out.println("No es un número perfecto.");
+                    }
+                    break;
+                // Numeros Primos
+                case 3:
+                    contadorPrimo++;
+                    int divisores = 0;
+                    Random aleatorio = new Random();
+                    int aleatorioN = aleatorio.nextInt(1, 100);
+
+                    System.out.println("\nEl numero elegido es: " + aleatorioN);
+                    System.out.print("Divisores: ");
+
+                    for (int i = 1; i <= aleatorioN; i++) {
+                        if (aleatorioN % i == 0) {
+                            System.out.print(i + " ");
+                            divisores++;
+                        }
+                    }
+                    if (divisores == 2) {
+                        System.out.println("\nEs Primo");
+                    } else {
+                        System.out.println("\nNo es primo");
+                    }
+
+                    break;
+
+                case 4:
+                    contadorVOTANTES++;
+                    System.out.print("\n¿Cuantos votantes hay en el pais?: ");
+                    int cantidadVotantes = leer.nextInt();
+                    int contadorAzul = 0,
+                     contadorRojo = 0,
+                     contadorNegro = 0,
+                     contadorAmarillo = 0,
+                     contadorGeneral = 0,
+                     contadorInvalido = 0,
+                     votosTotalesValidos = 0,
+                            votosMax=0;
+                    String planillaGanadora="";
+                     
+                    for (int i = 1; i <= cantidadVotantes; i++) {
+                        System.out.println("\n¿Por cual desea votar?\n\nAZUL | ROJO | NEGRO | AMARILLO");
+                        String voto = leer.next().toLowerCase();
+
+                        switch (voto) {
+                            case ("azul"):
+                                contadorAzul++;
+                                contadorGeneral++;
+                                break;
+
+                            case ("rojo"):
+                                contadorRojo++;
+                                contadorGeneral++;
+                                
+                            case("negro"):
+                                contadorNegro++;
+                                contadorGeneral++;
+                                
+                            case("amarillo"):
+                                contadorAmarillo++;
+                                contadorGeneral++;
+                            
+                            default:
+                                contadorInvalido++;
+                                contadorGeneral++;
+                        }
+                        if(contadorAzul>votosMax){
+                            votosMax = contadorAzul;
+                            planillaGanadora = voto;
+                        }
+                        if(contadorRojo>votosMax){
+                            votosMax = contadorRojo;
+                            planillaGanadora = voto;
+                        }
+                        if(contadorNegro>votosMax){
+                            votosMax = contadorAzul;
+                            planillaGanadora = voto;
+                        }
+                        if(contadorAmarillo>votosMax){
+                            votosMax = contadorAzul;
+                            planillaGanadora = voto;
+                        }
+                        
+                    }
+                    votosTotalesValidos = contadorAzul + contadorRojo + contadorNegro + contadorAmarillo;
                     
-                    for(int j = palabra.length() - 1;j>=0; j--){
-                        letraReves = palabra.charAt(j);
-                        System.out.print(letraReves);
-                        palabraReves+=palabra.charAt(j);
-                    }
-                    
-                    contadorPalabra = letraReves;
-                    if(contadorPalabra>contadorMax){
-                        contadorMax = contadorPalabra;
-                        palabraMax = palabra;
-                        palabraRevesMax=palabraReves;
-                    }
-                    
-                    if(palabra.equals(palabraReves)){
-                        System.out.println("\nEs palíndromo");
-                               
-                    }
-                    
-                  
-                }
-                System.out.println("\nLa palabra más larga es: "+palabraMax);
-                  System.out.println("\n======================================\n");
-                  
-                  break;
-            
-            // Numero Perfecto
-            case 2: 
-                contadorNumeroPerfecto++;
-                System.out.print("\nIngrese un numero:  ");
-                int N = leer.nextInt();
-                int sumadeN=0;
-                
-                for(int i = 1; i<N; i++){
-                    if(N % i == 0){
-                        sumadeN+=i;
-                    }
-                }
-                if(sumadeN==N){
-                      System.out.println("Es un número perfecto."); 
-                }
-                else{
-                    System.out.println("No es un número perfecto.");
-                }
-            
-            // Numeros Primos
-            case 3: 
-                contadorPrimo++;
-                int divisores =0;
-                Random aleatorio = new Random();
-                int aleatorioN = aleatorio.nextInt(1,100);
-                
-                System.out.println("\nEl numero elegido es: "+aleatorioN);
-                System.out.print("Divisores: ");
-                
-                for(int i = 1; i<=aleatorioN; i++ ){
-                    if(aleatorioN % i == 0){
-                        System.out.print(i+" ");
-                        divisores++;
-                    }
-                }
-              if(divisores == 2){
-                  System.out.println("\nEs Primo");
-              }else{
-                  System.out.println("\nNo es primo");
-              }
-                
-                break;
-        }
-            
-        }
-        while(opSeleccion != 5 && opSeleccion <=4);
+                    System.out.println("Planilla ganadora: "+planillaGanadora+" con "+votosMax+" votos.");
+                    break;
+            }
+
+        } while (opSeleccion != 5);
     }
-    
+
 }
