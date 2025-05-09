@@ -55,11 +55,12 @@ public class Lopez_Leonardo_Estructura {
                         }
 
                         contadorPalabra = letraReves;
-                        if (contadorPalabra > contadorMax) {
+                        if (contadorPalabra > palabra.length()) {
                             contadorMax = contadorPalabra;
                             palabraMax = palabra;
                             palabraRevesMax = palabraReves;
                         }
+                      
 
                         if (palabra.equals(palabraReves)) {
                             System.out.println("\nEs palíndromo");
