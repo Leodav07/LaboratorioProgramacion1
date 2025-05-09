@@ -17,10 +17,10 @@ public class Lopez_Leonardo_Estructura {
         Scanner leer = new Scanner(System.in);
         leer.useDelimiter("\n");
         int opSeleccion = 0, contadorPalabra = 0, contadorMax = 0;
-        int contadorPalabraReves = 0, contadorNumeroPerfecto = 0, contadorPrimo = 0, contadorVOTANTES = 0;
+        int contadorPalabraReves = 0, contadorNumeroPerfecto = 0, contadorPrimo = 0, contadorVotaciones = 0;
         char letraReves = ' ';
         String palabraMax = "", palabraReves = "", palabraRevesMax = "";
-        boolean primo = true;
+      
 
         do {
             System.out.println("=======**  MENU PRINCIPAL  **=======\n");
@@ -115,7 +115,7 @@ public class Lopez_Leonardo_Estructura {
                     break;
 
                 case 4:
-                    contadorVOTANTES++;
+                    contadorVotaciones++;
                     System.out.print("\n¿Cuantos votantes hay en el pais?: ");
                     int cantidadVotantes = leer.nextInt();
                     int contadorAzul = 0,
@@ -124,12 +124,13 @@ public class Lopez_Leonardo_Estructura {
                      contadorAmarillo = 0,
                      contadorGeneral = 0,
                      contadorInvalido = 0,
-                     votosTotalesValidos = 0,
-                            votosMax=0;
-                    String planillaGanadora="";
+                     votosTotalesValidos = 0;
+                 
+                    double votoCalculo = 0;
                      
                     for (int i = 1; i <= cantidadVotantes; i++) {
                         System.out.println("\n¿Por cual desea votar?\n\nAZUL | ROJO | NEGRO | AMARILLO");
+                        System.out.print("Voto: ");
                         String voto = leer.next().toLowerCase();
 
                         switch (voto) {
@@ -154,31 +155,60 @@ public class Lopez_Leonardo_Estructura {
                                 contadorInvalido++;
                                 contadorGeneral++;
                         }
-                        if(contadorAzul>votosMax){
-                            votosMax = contadorAzul;
-                            planillaGanadora = voto;
-                        }
-                        if(contadorRojo>votosMax){
-                            votosMax = contadorRojo;
-                            planillaGanadora = voto;
-                        }
-                        if(contadorNegro>votosMax){
-                            votosMax = contadorAzul;
-                            planillaGanadora = voto;
-                        }
-                        if(contadorAmarillo>votosMax){
-                            votosMax = contadorAzul;
-                            planillaGanadora = voto;
-                        }
+                        
                         
                     }
+                    
                     votosTotalesValidos = contadorAzul + contadorRojo + contadorNegro + contadorAmarillo;
                     
-                    System.out.println("Planilla ganadora: "+planillaGanadora+" con "+votosMax+" votos.");
+                    votoCalculo = (votosTotalesValidos/cantidadVotantes)*100;
+                    
+                    if(contadorAzul>contadorRojo && contadorAzul>contadorNegro && contadorAzul>contadorAmarillo){
+                        if(votoCalculo>=60){
+                     System.out.println("Planilla ganadora: AZUL");
+
+                    }else{
+                        System.out.println("Votacion Fallida");
+                    }
+                    }
+                    if(contadorRojo>contadorAzul && contadorRojo>contadorNegro && contadorRojo>contadorAmarillo){
+                        if(votoCalculo>=60){
+                     System.out.println("Planilla ganadora: ROJO");
+
+                    }else{
+                        System.out.println("Votacion Fallida");
+                    }
+                    }
+                    if(contadorNegro>contadorAzul && contadorNegro>contadorRojo && contadorNegro>contadorAmarillo){
+                        if(votoCalculo>=60){
+                     System.out.println("Planilla ganadora: NEGRO");
+
+                    }else{
+                        System.out.println("Votacion Fallida");
+                    }
+                    }
+                    if(contadorAmarillo>contadorAzul && contadorAmarillo>contadorRojo && contadorAmarillo>contadorNegro){
+                        if(votoCalculo>=60){
+                     System.out.println("Planilla ganadora: AMARILLO");
+
+                    }else{
+                        System.out.println("Votacion Fallida");
+                    }
+                    }
                     break;
+                    
+                case 5: 
+                    System.out.println("\n======================================");
+                    System.out.println("Cantidad de veces abiertas");
+                    System.out.println("Seccion de Palabra Alreves: "+contadorPalabraReves+" ");
+                    System.out.println("Seccion de Numero Perfecto: "+contadorNumeroPerfecto+" ");
+                    System.out.println("Seccion de Numero Primo: "+contadorPrimo+" ");
+                    System.out.println("Seccion de Votaciones: "+contadorVotaciones+" ");
+                    System.out.println("======** SALIENDO DEL SISTEMA **=======");
+                          
             }
 
-        } while (opSeleccion != 5);
+        } while (opSeleccion != 5 && opSeleccion<=4);
     }
 
 }
