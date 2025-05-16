@@ -45,7 +45,7 @@ public class Lopez_Leonardo_Estructura {
                         palabraReves = "";
                         System.out.println("\n");
                         System.out.print("Palabra #" + i + ": ");
-                        String palabra = leer.next().toLowerCase();
+                        String palabra = leer.next().toLowerCase().trim();
                         System.out.print("Al réves: ");
 
                         for (int j = palabra.length() - 1; j >= 0; j--) {
