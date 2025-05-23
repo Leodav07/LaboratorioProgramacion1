@@ -66,7 +66,7 @@ public class Lopez_Leonardo_Exam1 {
                             System.out.print("Elige (Piedra/Papel/Tijera): ");
                             eleccion = leer.next().toLowerCase();
                         } while (!eleccion.equalsIgnoreCase("piedra") && !eleccion.equalsIgnoreCase("papel") && !eleccion.equalsIgnoreCase("tijera"));
-                        int respuestaCPU = randResp.nextInt(1, 3);
+                        int respuestaCPU = randResp.nextInt(3) + 1;
 
                         switch (respuestaCPU) {
                             case 1:
@@ -85,8 +85,16 @@ public class Lopez_Leonardo_Exam1 {
                                 || (eleccion.equalsIgnoreCase("tijera") && respuestaCPU == 3)) {
                             System.out.println("Empate.");
                         }
-                        
-                        System.out.print("Desea continuar (si/no): ");
+                        if ((eleccion.equalsIgnoreCase("piedra") && respuestaCPU == 3) || (eleccion.equalsIgnoreCase("papel") && respuestaCPU == 1)
+                                || (eleccion.equalsIgnoreCase("tijera") && respuestaCPU == 2)) {
+                            System.out.println("Ganaste.");
+                        }
+                        if ((eleccion.equalsIgnoreCase("piedra") && respuestaCPU == 2) || (eleccion.equalsIgnoreCase("papel") && respuestaCPU == 3)
+                                || (eleccion.equalsIgnoreCase("tijera") && respuestaCPU == 1)) {
+                            System.out.println("Perdiste.");
+                        }
+
+                        System.out.print("\nDesea continuar (si/no): ");
                         resp = leer.next();
                     } while (resp.equalsIgnoreCase("si"));
                     System.out.println("\n");
