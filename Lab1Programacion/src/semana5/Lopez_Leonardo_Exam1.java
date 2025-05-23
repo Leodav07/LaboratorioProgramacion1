@@ -4,7 +4,7 @@
  */
 package semana5;
 
-import java.awt.BorderLayout;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -16,6 +16,7 @@ public class Lopez_Leonardo_Exam1 {
 
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
+        leer.useDelimiter("\n");
         int opSeleccion = 0;
         do {
             System.out.println("** MENU PRINCIPAL **");
@@ -66,13 +67,32 @@ public class Lopez_Leonardo_Exam1 {
                                  System.out.println("\n** CIFRAR MENSAJE **\n");
                                  System.out.print("Ingrese mensaje de texto a cifrar: ");
                                  String mensaje = leer.next();
+                                 char letraNormal = ' ', opuesto= ' ';
+                                 String mensajeCifrado = "";
                                  
+                                 for(int i = 0; i<mensaje.length();i++){
+                                     letraNormal = mensaje.charAt(i);
+                                     
+                                     if(letraNormal>= 'a' && letraNormal <='z') //condicion para convertir en opuestas las letras minusculas
+                                     {
+                                        opuesto = (char) ('z'-(letraNormal - 'a'));
+                                     } else if (letraNormal >= 'A' && letraNormal<='Z')// condicion para convertir en opuestas las letras mayusculas
+                                     {
+                                         opuesto = (char)('Z' - (letraNormal - 'A'));
+                                     }else //Si es signo, espacio o numero pasa aqui.
+                                     {
+                                         opuesto = letraNormal;
+                                     }
+                                     mensajeCifrado+=opuesto;
+                                 }
+                                 System.out.println("Mensaje cifrado: "+mensajeCifrado);
                                  break;
                              case 2: 
                                  System.out.println("\n** DECIFRAR MENSAJE **");
                                  break;
                              case 3:
                                  System.out.println("\n** REGRESANDO **\n");
+                                 break;
                              default:
                                  System.out.println("\n** Ingrese opcion valida **");
                                  break;
