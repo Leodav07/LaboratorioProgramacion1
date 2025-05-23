@@ -26,6 +26,23 @@ public class Lopez_Leonardo_Exam1 {
         
         switch(opSeleccion){
             case 1: 
+                int numFila=0, sumaN=0;
+                int imparNum =1;
+                
+                System.out.print("Cantidad de fila de la piramide: ");
+                numFila = leer.nextInt();
+                
+                for(int i =1; i<=numFila; i++){
+                    sumaN=0;
+                    for(int j = 1;j<=i; j++){
+                        System.out.print(imparNum + " ");
+                         sumaN += imparNum;
+                       imparNum += 2;
+                    }
+                    
+                    System.out.println("= "+sumaN);
+                }
+                
                 break;
                 
             case 2: 
