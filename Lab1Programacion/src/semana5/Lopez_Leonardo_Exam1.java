@@ -101,7 +101,31 @@ public class Lopez_Leonardo_Exam1 {
                     break;
 
                 case 4:
-
+                    System.out.println("\n** ADIVINAR **");
+                    Random random = new Random();
+                    int numAle = random.nextInt(1, 100);
+                    int num = 0, contInt=0;
+                    System.out.println("Computadora: Adivina el numero que estoy pensando..");
+                   
+                    for(int i = 1;i<=10; i++){
+                        System.out.print("Numero: ");
+                        num = leer.nextInt();
+                        contInt++;
+                        if(num == numAle){
+                            System.out.println("¡Haz Acertado!, te tomo "+contInt+" intentos.\n");
+                            break;
+                        }
+                        
+                        if(num>numAle){
+                            System.out.println("El numero que introduciste es mayor.");
+                        }else if(num<numAle){
+                            System.out.println("El numero que introduciste es menor.");
+                        }
+                        
+                    }
+                    if(contInt==10){
+                    System.out.println("\nNo lograste adivinar, el numero que estaba pensando era: "+numAle+"\nSuerte a la proxima.\n");
+                    }
                     break;
 
                 case 5:
