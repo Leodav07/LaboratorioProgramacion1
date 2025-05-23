@@ -38,14 +38,14 @@ public class Lopez_Leonardo_Exam1 {
                     numFila = leer.nextInt();
 
                     for (int i = 1; i <= numFila; i++) {
-                        sumaN = 0;
+                        sumaN = 0;   // se restablece a 0 para seguir a la siguiente linea de la piramide
                         for (int j = 1; j <= i; j++) {
-                            System.out.print(imparNum + " ");
-                            sumaN += imparNum;
-                            imparNum += 2;
+                            System.out.print(imparNum + " "); //imprime los numeros impares
+                            sumaN += imparNum; 
+                            imparNum += 2;    //se obtienen los demás numeros impares
                         }
 
-                        System.out.println("= " + sumaN);
+                        System.out.println("= " + sumaN); //suma de los numeros impares en la linea de la piramide
                     }
                     System.out.println("\n");
 
@@ -137,9 +137,9 @@ public class Lopez_Leonardo_Exam1 {
                             System.out.print("\nElige (Piedra/Papel/Tijera): ");
                             eleccion = leer.next().toLowerCase();
                         } while (!eleccion.equalsIgnoreCase("piedra") && !eleccion.equalsIgnoreCase("papel") && !eleccion.equalsIgnoreCase("tijera"));
-                        int respuestaCPU = randResp.nextInt(3) + 1;
+                        int respuestaCPU = randResp.nextInt(1, 4);
 
-                        switch (respuestaCPU) {
+                        switch (respuestaCPU) {  // segun el numero que elige la computadora es la respuesta. 
                             case 1:
                                 System.out.println("Computadora: Piedra");
                                 break;
