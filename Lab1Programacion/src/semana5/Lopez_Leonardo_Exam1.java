@@ -28,7 +28,7 @@ public class Lopez_Leonardo_Exam1 {
             System.out.println("=======================\n");
             System.out.print("Seleccione una opcion: ");
             opSeleccion = leer.nextInt();
-
+            System.out.println("\n=======================\n");
             switch (opSeleccion) {
                 case 1:   //Seccion piramide
                     int numFila = 0,
@@ -54,8 +54,9 @@ public class Lopez_Leonardo_Exam1 {
 
                 case 2: // Seccion cifrado/decifrado
                     int selec = 0;
+                    
                      do{
-                         System.out.println("\n** Cifrado/Decifrado de mensajes **");
+                         System.out.println("\n** CLAVE **");
                          System.out.println("1. Cifrar mensaje");
                          System.out.println("2. Decifrar mensaje");
                          System.out.println("3. Regresar");
@@ -86,15 +87,41 @@ public class Lopez_Leonardo_Exam1 {
                                      mensajeCifrado+=opuesto;
                                  }
                                  System.out.println("Mensaje cifrado: "+mensajeCifrado);
+                                  System.out.println("\n=======================\n");
                                  break;
-                             case 2: 
+                             case 2:    
+                                 letraNormal = ' ';
+                                 opuesto= ' ';
+                                 String mensajeDescifrado = "";
                                  System.out.println("\n** DECIFRAR MENSAJE **");
+                                  System.out.print("Ingrese mensaje de texto a descifrar: ");
+                                 mensaje = leer.next();
+                              
+                                 for(int i = 0; i<mensaje.length();i++){
+                                     letraNormal = mensaje.charAt(i);
+                                     
+                                     if(letraNormal>= 'a' && letraNormal <='z') //condicion para convertir en opuestas las letras minusculas
+                                     {
+                                        opuesto = (char) ('z'-(letraNormal - 'a'));
+                                     } else if (letraNormal >= 'A' && letraNormal<='Z')// condicion para convertir en opuestas las letras mayusculas
+                                     {
+                                         opuesto = (char)('Z' - (letraNormal - 'A'));
+                                     }else //Si es signo, espacio o numero pasa aqui.
+                                     {
+                                         opuesto = letraNormal;
+                                     }
+                                     mensajeDescifrado+=opuesto;
+                                 }
+                                 System.out.println("Mensaje descifrado: "+mensajeDescifrado);
+                                  System.out.println("\n=======================\n");
                                  break;
                              case 3:
                                  System.out.println("\n** REGRESANDO **\n");
+                                  System.out.println("=======================\n");
                                  break;
                              default:
                                  System.out.println("\n** Ingrese opcion valida **");
+                                  System.out.println("=======================\n");
                                  break;
                          }
                      }while(selec!=3);
@@ -108,7 +135,7 @@ public class Lopez_Leonardo_Exam1 {
                     System.out.println("\n**Bienvendio al juego de PIEDRA, PAPEL O TIJERA **\nEn este juego jugaras contra la computadora. \n¿Estas Listo?\n");
                     do {
                         do {
-                            System.out.print("Elige (Piedra/Papel/Tijera): ");
+                            System.out.print("\nElige (Piedra/Papel/Tijera): ");
                             eleccion = leer.next().toLowerCase();
                         } while (!eleccion.equalsIgnoreCase("piedra") && !eleccion.equalsIgnoreCase("papel") && !eleccion.equalsIgnoreCase("tijera"));
                         int respuestaCPU = randResp.nextInt(3) + 1;
@@ -142,13 +169,13 @@ public class Lopez_Leonardo_Exam1 {
                         System.out.print("\nDesea continuar (si/no): ");
                         resp = leer.next();
                     } while (resp.equalsIgnoreCase("si"));
-                    System.out.println("\n");
+                    System.out.println("=======================\n");
                     break;
 
                 case 4: //Seccion de adivinar
                     System.out.println("\n** ADIVINAR **");
                     Random random = new Random();
-                    int numAle = random.nextInt(1, 100);
+                    int numAle = random.nextInt(1, 101);
                     int num = 0, contInt=0;
                     System.out.println("Computadora: Adivina el numero que estoy pensando..");
                    
