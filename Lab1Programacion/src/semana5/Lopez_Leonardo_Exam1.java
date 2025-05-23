@@ -52,7 +52,15 @@ public class Lopez_Leonardo_Exam1 {
                     break;
 
                 case 2:
-                     
+                    int selec = 0;
+                     do{
+                         System.out.println("\n** Cifrado/Decifrado de mensajes **");
+                         System.out.println("1. Cifrar mensaje");
+                         System.out.println("2. Decifrar mensaje");
+                         System.out.print("Elige una opcion: ");
+                         selec = leer.nextInt();
+                         
+                     }while(selec!=3);
                     break;
 
                 case 3: //Seccion juego de piedra papel o tijera
