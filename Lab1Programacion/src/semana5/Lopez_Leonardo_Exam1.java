@@ -29,7 +29,7 @@ public class Lopez_Leonardo_Exam1 {
             opSeleccion = leer.nextInt();
 
             switch (opSeleccion) {
-                case 1:
+                case 1:   //Seccion piramide
                     int numFila = 0,
                      sumaN = 0;
                     int imparNum = 1;
@@ -52,10 +52,10 @@ public class Lopez_Leonardo_Exam1 {
                     break;
 
                 case 2:
-
+                     
                     break;
 
-                case 3:
+                case 3: //Seccion juego de piedra papel o tijera
                     Random randResp = new Random();
 
                     String resp = "";
@@ -100,7 +100,7 @@ public class Lopez_Leonardo_Exam1 {
                     System.out.println("\n");
                     break;
 
-                case 4:
+                case 4: //Seccion de adivinar
                     System.out.println("\n** ADIVINAR **");
                     Random random = new Random();
                     int numAle = random.nextInt(1, 100);
