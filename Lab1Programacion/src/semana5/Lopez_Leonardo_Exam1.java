@@ -20,8 +20,9 @@ public class Lopez_Leonardo_Exam1 {
         System.out.println("  2. CLAVE");
         System.out.println("  3. PIEDRA, PAPEL Y TIJERA");
         System.out.println("  4. ADIVINAR");
+        System.out.println("  5. SALIR");
         System.out.println("=======================\n");
-        System.out.println("Seleccione una opcion: ");
+        System.out.print("Seleccione una opcion: ");
         opSeleccion = leer.nextInt();
         
         switch(opSeleccion){
@@ -42,6 +43,7 @@ public class Lopez_Leonardo_Exam1 {
                     
                     System.out.println("= "+sumaN);
                 }
+                System.out.println("\n");
                 
                 break;
                 
@@ -58,7 +60,7 @@ public class Lopez_Leonardo_Exam1 {
                 break;
                 
             case 5: 
-                
+                System.out.println("** Finalizando programa **");
                 break;
                 
             default:
