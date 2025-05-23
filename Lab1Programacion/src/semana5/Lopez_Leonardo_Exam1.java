@@ -51,15 +51,32 @@ public class Lopez_Leonardo_Exam1 {
 
                     break;
 
-                case 2:
+                case 2: // Seccion cifrado/decifrado
                     int selec = 0;
                      do{
                          System.out.println("\n** Cifrado/Decifrado de mensajes **");
                          System.out.println("1. Cifrar mensaje");
                          System.out.println("2. Decifrar mensaje");
+                         System.out.println("3. Regresar");
                          System.out.print("Elige una opcion: ");
                          selec = leer.nextInt();
                          
+                         switch(selec){
+                             case 1: 
+                                 System.out.println("\n** CIFRAR MENSAJE **\n");
+                                 System.out.print("Ingrese mensaje de texto a cifrar: ");
+                                 String mensaje = leer.next();
+                                 
+                                 break;
+                             case 2: 
+                                 System.out.println("\n** DECIFRAR MENSAJE **");
+                                 break;
+                             case 3:
+                                 System.out.println("\n** REGRESANDO **\n");
+                             default:
+                                 System.out.println("\n** Ingrese opcion valida **");
+                                 break;
+                         }
                      }while(selec!=3);
                     break;
 
