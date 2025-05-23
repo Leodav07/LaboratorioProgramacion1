@@ -152,6 +152,7 @@ public class Lopez_Leonardo_Exam1 {
                             default:
                                 break;
                         }
+                       //condiciones segun las reglas del juego piedra, papel o tijera
                         if ((eleccion.equalsIgnoreCase("piedra") && respuestaCPU == 1) || (eleccion.equalsIgnoreCase("papel") && respuestaCPU == 2)
                                 || (eleccion.equalsIgnoreCase("tijera") && respuestaCPU == 3)) {
                             System.out.println("Empate.");
@@ -178,12 +179,12 @@ public class Lopez_Leonardo_Exam1 {
                     int num = 0, contInt=0, contRest=10;
                     System.out.println("Computadora: Adivina el numero que estoy pensando..\n");
                    
-                    for(int i = 1;i<=10; i++){
+                    for(int i = 1;i<=10; i++){  //ciclo para intentos ingresados por el usuario
                         System.out.print("Numero: ");
                         num = leer.nextInt();
                         contInt++;
                         if(num == numAle){
-                            System.out.println("¡Haz Acertado!, te tomo "+contInt+" intentos.\n");
+                            System.out.println("Haz Acertado, te tomo "+contInt+" intentos.\n"); //Si acierta.
                             break;
                         }
                         
@@ -196,7 +197,7 @@ public class Lopez_Leonardo_Exam1 {
                         System.out.println("Te quedan: "+contRest+" intentos.\n");
                         
                     }
-                    if(contInt==10){
+                    if(contInt==10){ //condicion por si el usuario no llega a acertar el numero
                     System.out.println("\nNo lograste adivinar, el numero que estaba pensando era: "+numAle+"\nSuerte a la proxima.\n");
                     }
                     break;
