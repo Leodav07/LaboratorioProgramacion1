@@ -6,6 +6,7 @@ package semana5;
 
 import java.awt.BorderLayout;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
@@ -55,6 +56,8 @@ public class Lopez_Leonardo_Exam1 {
                     break;
 
                 case 3:
+                    Random randResp = new Random();
+
                     String resp = "";
                     String eleccion = "";
                     System.out.println("\n**Bienvendio al juego de PIEDRA, PAPEL O TIJERA **\nEn este juego jugaras contra la computadora. \n¿Estas Listo?\n");
@@ -63,7 +66,26 @@ public class Lopez_Leonardo_Exam1 {
                             System.out.print("Elige (Piedra/Papel/Tijera): ");
                             eleccion = leer.next().toLowerCase();
                         } while (!eleccion.equalsIgnoreCase("piedra") && !eleccion.equalsIgnoreCase("papel") && !eleccion.equalsIgnoreCase("tijera"));
+                        int respuestaCPU = randResp.nextInt(1, 3);
 
+                        switch (respuestaCPU) {
+                            case 1:
+                                System.out.println("Computadora: Piedra");
+                                break;
+                            case 2:
+                                System.out.println("Computadora: Papel");
+                                break;
+                            case 3:
+                                System.out.println("Computadora: Tijera");
+                                break;
+                            default:
+                                break;
+                        }
+                        if ((eleccion.equalsIgnoreCase("piedra") && respuestaCPU == 1) || (eleccion.equalsIgnoreCase("papel") && respuestaCPU == 2)
+                                || (eleccion.equalsIgnoreCase("tijera") && respuestaCPU == 3)) {
+                            System.out.println("Empate.");
+                        }
+                        
                         System.out.print("Desea continuar (si/no): ");
                         resp = leer.next();
                     } while (resp.equalsIgnoreCase("si"));
