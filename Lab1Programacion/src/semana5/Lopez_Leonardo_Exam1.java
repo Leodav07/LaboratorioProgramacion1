@@ -31,8 +31,7 @@ public class Lopez_Leonardo_Exam1 {
             System.out.println("\n=======================\n");
             switch (opSeleccion) {
                 case 1:   //Seccion piramide
-                    int numFila = 0,
-                     sumaN = 0;
+                    int numFila = 0, sumaN = 0;
                     int imparNum = 1;
 
                     System.out.print("\nCantidad de fila de la piramide: ");
@@ -121,7 +120,7 @@ public class Lopez_Leonardo_Exam1 {
                                  break;
                              default:
                                  System.out.println("\n** Ingrese opcion valida **");
-                                  System.out.println("=======================\n");
+                                  System.out.println("\n=======================");
                                  break;
                          }
                      }while(selec!=3);
@@ -132,7 +131,7 @@ public class Lopez_Leonardo_Exam1 {
 
                     String resp = "";
                     String eleccion = "";
-                    System.out.println("\n**Bienvendio al juego de PIEDRA, PAPEL O TIJERA **\nEn este juego jugaras contra la computadora. \n¿Estas Listo?\n");
+                    System.out.println("\n**Bienvendio al juego de PIEDRA, PAPEL O TIJERA **\nEn este juego jugaras contra la computadora. \n¿Estas Listo?");
                     do {
                         do {
                             System.out.print("\nElige (Piedra/Papel/Tijera): ");
@@ -176,8 +175,8 @@ public class Lopez_Leonardo_Exam1 {
                     System.out.println("\n** ADIVINAR **");
                     Random random = new Random();
                     int numAle = random.nextInt(1, 101);
-                    int num = 0, contInt=0;
-                    System.out.println("Computadora: Adivina el numero que estoy pensando..");
+                    int num = 0, contInt=0, contRest=10;
+                    System.out.println("Computadora: Adivina el numero que estoy pensando..\n");
                    
                     for(int i = 1;i<=10; i++){
                         System.out.print("Numero: ");
@@ -193,6 +192,8 @@ public class Lopez_Leonardo_Exam1 {
                         }else if(num<numAle){
                             System.out.println("El numero que introduciste es menor.");
                         }
+                        contRest--;
+                        System.out.println("Te quedan: "+contRest+" intentos.\n");
                         
                     }
                     if(contInt==10){
@@ -205,7 +206,7 @@ public class Lopez_Leonardo_Exam1 {
                     break;
 
                 default:
-                    System.out.println("\nSelecciona una opcion valida.\n");
+                    System.out.println("Selecciona una opcion valida.\n");
             }
 
         } while (opSeleccion != 5);
