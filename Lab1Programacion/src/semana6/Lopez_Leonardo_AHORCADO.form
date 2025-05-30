@@ -135,11 +135,16 @@
                       <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="letraBox" min="-2" pref="112" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="letraBox" min="-2" pref="112" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="errorLabel" min="-2" pref="113" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="ingresarLetra" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="palabraElegida" min="-2" pref="113" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -176,14 +181,16 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace pref="112" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="letraBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="palabraElegida" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingresarLetra" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="oportunidad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="estado" min="-2" max="-2" attributes="0"/>
@@ -206,9 +213,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="palabraOculta">
-              <Properties>
-                <Property name="text" type="java.lang.String" value=" "/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="palabraElegida">
               <Properties>
@@ -233,12 +237,12 @@
                 <Property name="text" type="java.lang.String" value="ADIVINA PALABRA"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="ingresarLetra">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingresar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ingresarLetraActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="regresarBoton">
@@ -250,14 +254,10 @@
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="estado">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="si/no"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="oportunidad">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Oportunidad"/>
-              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="errorLabel">
             </Component>
           </SubComponents>
         </Container>
