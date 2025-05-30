@@ -294,6 +294,12 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         
         String palabraResul = String.join(" ", textoOculto);
         palabraOculta.setText(palabraResul);
+        
+        String palabraComparar = palabraResul.replace(" ","");
+        if(palabraComparar.equals(palabraActual)){
+            estado.setText("¡Adivinaste la palabra, felicidades!");
+            ingresarLetra.setEnabled(false);
+        }
         letraBox.setText("");
         
     }//GEN-LAST:event_ingresarLetraActionPerformed
