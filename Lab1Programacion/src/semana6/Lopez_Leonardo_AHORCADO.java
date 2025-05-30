@@ -29,7 +29,6 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         panelJugar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         palabraOculta = new javax.swing.JLabel();
-        palabraElegida = new javax.swing.JLabel();
         letraBox = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -40,6 +39,13 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         errorLabel = new javax.swing.JLabel();
         panelCambiar = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        nuevaPalabra = new javax.swing.JTextField();
+        reemplazarButton = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        antiguoArreglo = new javax.swing.JLabel();
+        nuevoArreglo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -101,8 +107,6 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("AHORCADOS");
 
-        palabraElegida.setText(" ");
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Ingresa una letra:");
 
@@ -139,9 +143,7 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
                             .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(ingresarLetra)
-                        .addGap(42, 42, 42)
-                        .addComponent(palabraElegida, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
+                        .addGap(182, 182, 182))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelJugarLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(176, 176, 176))
@@ -172,7 +174,6 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
                 .addGroup(panelJugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(letraBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(palabraElegida, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ingresarLetra))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(errorLabel)
@@ -189,23 +190,81 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
 
         panelPadre.add(panelJugar, "card2");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("CAMBIAR PALABRA");
+
+        reemplazarButton.setText("Reemplazar");
+        reemplazarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reemplazarButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Antiguo Listado");
+
+        antiguoArreglo.setText(" ");
+
+        nuevoArreglo.setText(" ");
+
+        jLabel10.setText("Nuevo Listado");
+
+        jButton2.setText("Regresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCambiarLayout = new javax.swing.GroupLayout(panelCambiar);
         panelCambiar.setLayout(panelCambiarLayout);
         panelCambiarLayout.setHorizontalGroup(
             panelCambiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCambiarLayout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addGap(198, 198, 198)
+                .addGroup(panelCambiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reemplazarButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCambiarLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(panelCambiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCambiarLayout.createSequentialGroup()
+                        .addGroup(panelCambiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nuevaPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(156, 156, 156))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCambiarLayout.createSequentialGroup()
+                        .addGroup(panelCambiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nuevoArreglo, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(antiguoArreglo, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCambiarLayout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(197, 197, 197))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCambiarLayout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addContainerGap())))
         );
         panelCambiarLayout.setVerticalGroup(
             panelCambiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCambiarLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel3)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(nuevaPalabra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(reemplazarButton)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(antiguoArreglo)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nuevoArreglo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
 
         panelPadre.add(panelCambiar, "card3");
@@ -242,7 +301,7 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         for(int i = 0; i<palabraActual.length(); i++){
             palabraOcu+="_"+" ";
         }
-        palabraElegida.setText(palabraActual);
+       
         palabraOculta.setText(palabraOcu);
         
         
@@ -318,6 +377,31 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         oportunidad.setText("Oportunidad: "+contador);
     }//GEN-LAST:event_regresarBotonActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       panelPadre.removeAll();
+        panelPadre.add(panelMenu);
+        panelPadre.repaint();
+        panelPadre.revalidate();
+        antiguoArreglo.setText("");
+        nuevoArreglo.setText("");
+        nuevaPalabra.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+   int contadorPalabra = 0;
+    private void reemplazarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reemplazarButtonActionPerformed
+       String nuevaPalabras ="";
+       
+      nuevaPalabras = nuevaPalabra.getText();
+      contadorPalabra++;
+      palabras[contadorPalabra] = nuevaPalabras;
+      if(contadorPalabra==10){
+          for(int i = 0; i<palabras.length;i++){
+              
+          }
+      }
+       
+       
+    }//GEN-LAST:event_reemplazarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -354,25 +438,31 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel antiguoArreglo;
     private javax.swing.JButton cambiarButton;
     private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel estado;
     private javax.swing.JButton ingresarLetra;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton jugarButton;
     private javax.swing.JTextField letraBox;
+    private javax.swing.JTextField nuevaPalabra;
+    private javax.swing.JLabel nuevoArreglo;
     private javax.swing.JLabel oportunidad;
-    private javax.swing.JLabel palabraElegida;
     private javax.swing.JLabel palabraOculta;
     private javax.swing.JPanel panelCambiar;
     private javax.swing.JPanel panelJugar;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelPadre;
+    private javax.swing.JButton reemplazarButton;
     private javax.swing.JButton regresarBoton;
     // End of variables declaration//GEN-END:variables
 }
