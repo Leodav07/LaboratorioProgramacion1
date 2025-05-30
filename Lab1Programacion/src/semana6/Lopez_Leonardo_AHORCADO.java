@@ -259,7 +259,7 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
     }//GEN-LAST:event_cambiarButtonActionPerformed
      int contador = 5;
     private void ingresarLetraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarLetraActionPerformed
-       
+      
         boolean oportunidades = false;
         String letraText = letraBox.getText().toUpperCase();
         
@@ -286,6 +286,12 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
             estado.setText("Incorrecto.");
         }
         
+        if(contador == 0){
+            oportunidad.setText("Sin oportunidades");
+            estado.setText("No lograste adivinar la palabra");
+            ingresarLetra.setEnabled(false);
+        }
+        
         String palabraResul = String.join(" ", textoOculto);
         palabraOculta.setText(palabraResul);
         letraBox.setText("");
@@ -298,6 +304,12 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         panelPadre.add(panelMenu);
         panelPadre.repaint();
         panelPadre.revalidate();
+        palabraOculta.setText("");
+        letraBox.setText("");
+        estado.setText("");
+        contador = 5;
+        ingresarLetra.setEnabled(true);
+        oportunidad.setText("Oportunidad: "+contador);
     }//GEN-LAST:event_regresarBotonActionPerformed
 
     /**
