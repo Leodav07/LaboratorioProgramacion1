@@ -154,10 +154,12 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
             .addGroup(panelJugarLayout.createSequentialGroup()
                 .addGap(189, 189, 189)
                 .addGroup(panelJugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(oportunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(palabraOculta, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(estado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelJugarLayout.createSequentialGroup()
+                        .addGroup(panelJugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(oportunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(palabraOculta, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelJugarLayout.setVerticalGroup(
             panelJugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,13 +257,15 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
       
         
     }//GEN-LAST:event_cambiarButtonActionPerformed
-
+     int contador = 5;
     private void ingresarLetraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarLetraActionPerformed
-        int contador = 5;
+       
+        boolean oportunidades = false;
         String letraText = letraBox.getText().toUpperCase();
         
         if(letraText.length()!=1){
             errorLabel.setText("Ingrese solo 1 letra");
+            letraBox.setText("");
             return;
         }
         String palabraOcultaActual = palabraOculta.getText();
@@ -272,15 +276,19 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
             textoOculto[i] = letraText;
             oportunidad.setText("Oportunidad: "+contador);
             estado.setText("¡Le pegaste a un carácter!");
-        }else{
+            oportunidades = true;
+        }
+        }
+        
+        if(!oportunidades){
             contador--;
-            oportunidad.setText("Oportunidad: "+contador);
+            oportunidad.setText("Oportunidad: "+ contador);
             estado.setText("Incorrecto.");
-            }
         }
         
         String palabraResul = String.join(" ", textoOculto);
         palabraOculta.setText(palabraResul);
+        letraBox.setText("");
         
     }//GEN-LAST:event_ingresarLetraActionPerformed
 
