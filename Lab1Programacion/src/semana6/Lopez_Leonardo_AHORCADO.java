@@ -313,6 +313,8 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         panelPadre.add(panelCambiar);
         panelPadre.repaint();
         panelPadre.revalidate();
+         String palabra ="";
+        
       
         
     }//GEN-LAST:event_cambiarButtonActionPerformed
@@ -386,20 +388,9 @@ public class Lopez_Leonardo_AHORCADO extends javax.swing.JFrame {
         nuevoArreglo.setText("");
         nuevaPalabra.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
-   int contadorPalabra = 0;
+   
     private void reemplazarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reemplazarButtonActionPerformed
-       String nuevaPalabras ="";
-       
-      nuevaPalabras = nuevaPalabra.getText();
-      contadorPalabra++;
-      palabras[contadorPalabra] = nuevaPalabras;
-      if(contadorPalabra==10){
-          for(int i = 0; i<palabras.length;i++){
-              
-          }
-      }
-       
-       
+    
     }//GEN-LAST:event_reemplazarButtonActionPerformed
 
     /**
